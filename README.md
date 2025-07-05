@@ -1,20 +1,15 @@
 # crewai-testinng
 
-This repository demonstrates how to use [CrewAI](https://github.com/crewAIInc/crewAI) to build a hierarchical agent system that collects Twitter accounts related to a topic without querying Twitter's search API. Originally the example was provided as a Jupyter notebook, but a Python script is now included. The notebook has been updated to use the same DuckDuckGo-based workflow.
+This repository demonstrates how to use [CrewAI](https://github.com/crewAIInc/crewAI) to build a simple agent that gathers web search results for a topic. Searches are performed using [SerpAPI](https://serpapi.com/).
 
-The new `duckduckgo_account_searcher.py` script searches **DuckDuckGo** for Twitter profile links matching a topic. Each handle is then verified via the Twitter API to ensure the account is real and active, so no Twitter search queries are made.
+The `serpapi_searcher.py` script queries SerpAPI and stores unique result links in a table.
 
-Before running the script, set the following environment variables with your API credentials:
+Before running the script, set your SerpAPI key:
 
-- `TWITTER_CONSUMER_KEY`
-- `TWITTER_CONSUMER_SECRET`
-- `TWITTER_ACCESS_TOKEN`
-- `TWITTER_ACCESS_SECRET`
-- `OPENAI_API_KEY`
-- `SERPER_API_KEY`
+- `SERPAPI_API_KEY`
 
-Run the script to collect 1000 unique verified Twitter accounts:
+Run the script to collect results:
 
 ```bash
-python duckduckgo_account_searcher.py
+python serpapi_searcher.py
 ```
